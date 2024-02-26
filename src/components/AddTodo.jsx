@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../fitures/todoSlice";
+import { addTodo, postAsyncTodo } from "../fitures/todoSlice";
 
 export default function AddTodo() {
   const [todo, setTodo] = useState("");
@@ -9,7 +9,7 @@ export default function AddTodo() {
   const handlerSubmmit = (e) => {
     e.preventDefault();
     if (!todo) return;
-    dispatch(addTodo({ title: todo }));
+    dispatch(postAsyncTodo({ title: todo }));
     setTodo("");
   };
   return (
